@@ -1,18 +1,11 @@
-from django.shortcuts import render,redirect,get_object_or_404
-from django.http import Http404,HttpResponse,HttpResponseRedirect
-import datetime as dt
+from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
-from .models import *
 from .forms import *
-# Create your views here.
-
+from .models import *
+from django.contrib import messages
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializer import *
-from rest_framework import status
-from .permissions import IsAdminOrReadOnly
-from rest_framework import authentication, permissions
 
 @login_required(login_url='/accounts/login/')
 def home(request):
@@ -20,7 +13,7 @@ def home(request):
     context = {
     "projects":projects,
     }
-    return render(request, 'index.html', locals())
+    return render(request, 'home.html', locals())
 
 
 def registration(request):
@@ -104,7 +97,7 @@ def postproject(request):
     context = {
         'form':form,
     }
-    return render(request, 'PostProject.html', context)
+    return render(request, 'Post.html', context)
 
 @login_required(login_url='/accounts/login/')
 def get_project(request, id):
