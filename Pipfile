@@ -17,6 +17,10 @@ pillow = "*"
 django-bootstrap3 = "*"
 requests = "*"
 whitenoise = "*"
+gunicorn = "*"
+python-decouple = "*"
+dj-database-url = "*"
+django-heroku = "*"
 
 [dev-packages]
 
