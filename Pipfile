@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+bootstrap4 = "*"
+django-star-ratings = "*"
+cloudinary = "*"
+psycopg2 = "*"
+django-tinymce = "*"
+django-bootstrap4 = "*"
+djangorestframework = "*"
+django-registration = "*"
+pillow = "*"
+django-bootstrap3 = "*"
+requests = "*"
+whitenoise = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
